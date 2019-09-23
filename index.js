@@ -11,6 +11,19 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+
+
+const titleCased = (input) => {
+  return tutorials.map ( sentence => {
+    //console.log("first test ====", tutorials)
+    let words = sentence.split(' '); //split by space
+    //console.log("test=====", words)
+    let capWords = words.map (
+       word => word.charAt(0).toUpperCase() + word.slice(1) );
+       //console.log("slice===", word.slice(1)) // this will slice off everything after index 0 from word to join together with capW/ord
+    //upperCase each char at 0 index and 
+    //console.log("map ====", capWords)
+    let newSentence = capWords.join(' '); //join all words with a space
+    return newSentence;
+  })
 }
